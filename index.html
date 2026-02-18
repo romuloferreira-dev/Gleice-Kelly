@@ -507,13 +507,18 @@
             .hero-text h1 { font-size: 2.5rem; }
             .bio-content { flex-direction: column; }
             
-            /* Ajustes de Texto Mobile */
+            /* Ajustes de Texto Mobile - Correção de Quebra de Linha */
             .hero-text p {
-                font-size: 0.85rem;
+                font-size: 0.9rem; /* Fonte confortável */
                 margin-bottom: 20px;
-                white-space: nowrap; 
-                overflow: hidden;
-                text-overflow: ellipsis;
+                white-space: normal; /* Permite quebra de linha normal */
+                line-height: 1.4; /* Espaçamento entre linhas */
+            }
+
+            /* Actions Mobile */
+            .hero-actions {
+                flex-direction: column;
+                gap: 15px;
             }
 
             /* Esconde o botão Instagram do topo (Desktop) */
