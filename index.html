@@ -151,6 +151,7 @@
             height: 100%;
             display: flex;
             justify-content: center;
+            /* Flex direction padrão row no desktop */
         }
 
         .hero-img {
@@ -216,7 +217,7 @@
             gap: 20px;
         }
 
-        /* Botão Instagram - Agora visível globalmente e estilizado */
+        /* ESTILO BASE DO BOTÃO INSTAGRAM */
         .btn-instagram-hero {
             display: inline-flex;
             align-items: center;
@@ -239,6 +240,11 @@
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(183, 110, 121, 0.2);
+        }
+
+        /* Controle de Visibilidade Desktop/Mobile */
+        .mobile-btn {
+            display: none; /* Escondido por padrão no Desktop */
         }
 
         /* --- STATS BAR --- */
@@ -510,23 +516,30 @@
                 text-overflow: ellipsis;
             }
 
-            /* Actions Mobile */
-            .hero-actions {
-                flex-direction: column;
-                gap: 15px;
+            /* Esconde o botão Instagram do topo (Desktop) */
+            .desktop-btn {
+                display: none;
             }
 
-            /* Botão Instagram Mobile Full Width */
-            .btn-instagram-hero {
+            /* Mostra e estiliza o botão Instagram de baixo (Mobile) */
+            .mobile-btn {
+                display: inline-flex; /* Torna visível */
+                margin-top: 20px; /* Espaço da foto */
                 width: 100%;
                 max-width: 320px;
+            }
+
+            /* Hero Container no Mobile: Empilha a imagem e o novo botão */
+            .hero-img-container {
+                flex-direction: column; 
+                align-items: center;
             }
 
             /* Botão Agendar Mobile Full Width */
             .btn-main {
                 width: 100%;
                 max-width: 320px;
-                padding: 15px 30px; /* Ajuste leve de padding */
+                padding: 15px 30px; 
             }
             
             /* Timeline Responsiva */
@@ -551,15 +564,21 @@
                     <p style="margin-top: -20px; font-size: 0.95rem; color: var(--primary);" class="reveal delay-300">CEO & Fundadora da Beauty Esthetic</p>
                     
                     <div class="hero-actions reveal delay-300">
-                        <!-- APENAS O BOTÃO DO INSTAGRAM AQUI -->
-                        <a href="https://www.instagram.com/gleicekellydelima/" target="_blank" class="btn-instagram-hero">
+                        <!-- BOTÃO INSTAGRAM DESKTOP (ESQUERDA) -->
+                        <a href="https://www.instagram.com/gleicekellydelima/" target="_blank" class="btn-instagram-hero desktop-btn">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
                     </div>
                 </div>
+                
                 <div class="hero-img-container reveal delay-200">
-                    <!-- FOTO DA DRA GLEICE (ASSETS) -->
+                    <!-- FOTO DA DRA GLEICE -->
                     <img src="assets/gleice.png" alt="Dra. Gleice Kelly" class="hero-img float-animation">
+                    
+                    <!-- BOTÃO INSTAGRAM MOBILE (ABAIXO DA FOTO) -->
+                    <a href="https://www.instagram.com/gleicekellydelima/" target="_blank" class="btn-instagram-hero mobile-btn">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
                 </div>
             </div>
         </div>
